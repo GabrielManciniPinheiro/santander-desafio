@@ -15,13 +15,21 @@ export class ProductService {
       nome: 'Tesouro Selic 2029',
       categoria: 'Renda Fixa',
       valorMinimo: 145.5,
+      QtdCarteira: 5,
     },
-    { id: 2, nome: 'Ação PETR4', categoria: 'Ações', valorMinimo: 38.2 },
+    {
+      id: 2,
+      nome: 'Ação PETR4',
+      categoria: 'Ações',
+      valorMinimo: 38.2,
+      QtdCarteira: 100,
+    },
     {
       id: 3,
       nome: 'Fundo Imobiliário MXRF11',
       categoria: 'Fundos Imobiliários',
       valorMinimo: 10.5,
+      QtdCarteira: 230,
     },
   ];
   private nextId = 4; // Para gerar IDs para novos produtos

@@ -3,4 +3,5 @@ export interface Product {
   nome: string;
   categoria: string;
   valorMinimo: number;
+  QtdCarteira: number;
 }

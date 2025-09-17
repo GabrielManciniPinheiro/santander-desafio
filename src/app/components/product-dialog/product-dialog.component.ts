@@ -46,6 +46,7 @@ export class ProductDialogComponent implements OnInit {
       nome: ['', Validators.required],
       categoria: ['', Validators.required],
       valorMinimo: [0, [Validators.required, Validators.min(0.01)]],
+      QtdCarteira: [0, [Validators.required, Validators.min(0)]],
     });
   }
 
