@@ -1,4 +1,9 @@
 h1[mat-dialog-title] {
+  text-align: center;
   font-weight: bold; // Deixa o texto em negrito
-  color: #e91e63; // tom de rosa padrão do Material Design (Pink 500), que combina com o tema que você escolheu.
+  color: #e91e63; // Este é um tom de rosa padrão do Material Design (Pink 500), que combina com o tema que você escolheu.
+}
+
+div[mat-dialog-content] {
+  text-align: center;
 }

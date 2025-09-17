@@ -4,9 +4,10 @@
   display: flex;
   flex-direction: column; // Organiza os itens em uma coluna (um embaixo do outro)
 
-  // Cria um espaço de 32px entre cada item
+  // Esta é a propriedade mágica! Cria um espaço de 32px entre cada item
   // (entre o título e o botão, e entre o botão e a tabela).
   gap: 32px;
+
   padding: 40px;
 
   // Define uma largura máxima para que a tabela não fique gigante em telas grandes
