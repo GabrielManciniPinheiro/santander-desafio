@@ -1,0 +1,26 @@
+// Container principal da página
+.container {
+  // Flexbox para o alinhamento e espaçamento dos itens internos
+  display: flex;
+  flex-direction: column; // Organiza os itens em uma coluna (um embaixo do outro)
+
+  // Cria um espaço de 32px entre cada item
+  // (entre o título e o botão, e entre o botão e a tabela).
+  gap: 32px;
+  padding: 40px;
+
+  // Define uma largura máxima para que a tabela não fique gigante em telas grandes
+  max-width: 1200px;
+  margin: 0 auto; // Centraliza o container na tela
+}
+h1 {
+  text-align: center;
+  color: #e91e63;
+}
+
+// Alinha o botão "Adicionar" para a esquerda
+//seletor específico para pegar só o botão principal
+button[mat-raised-button] {
+  align-self: flex-start; // Dentro de um container flex, alinha o próprio item ao início
+  width: 200px; // Define uma largura fixa para o botão
+}
