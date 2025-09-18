@@ -5,10 +5,10 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { Product } from '../models/product.model';
 
 @Injectable({
-  providedIn: 'root', // Isso faz com que o Angular forneça uma única instância deste serviço para toda a aplicação.
+  providedIn: 'root', // faz com que o Angular forneça uma única instância deste serviço para toda a aplicação.
 })
 export class ProductService {
-  // 1. Simulação de uma tabela do banco de dados com dados iniciais.
+  // Simulação do banco de dados com dados iniciais.
   private products: Product[] = [
     {
       id: 1,
@@ -32,30 +32,30 @@ export class ProductService {
       QtdCarteira: 230,
     },
   ];
-  private nextId = 4; // Para gerar IDs para novos produtos
+  private nextId = 4; // Para gerar IDs para novos Investimentos
 
-  // 2. Usamos um BehaviorSubject para que os componentes possam "ouvir" as mudanças na lista de produtos.
+  // BehaviorSubject para os componentes ouvirem as mudanças na lista de investimentos.
   private products$ = new BehaviorSubject<Product[]>(this.products);
 
   constructor() {}
 
   // --- MÉTODOS CRUD ---
 
-  // READ: Retorna a lista de produtos como um Observable.
-  // Qualquer componente que "assinar" este método receberá a lista atualizada sempre que ela mudar.
+  //Retorna a lista de produtos como um Observable.
+  // Qualquer componente que assinar este método receberá a lista atualizada sempre que ela mudar.
   getProducts(): Observable<Product[]> {
     return this.products$.asObservable();
   }
 
-  // CREATE: Adiciona um novo produto.
+  // CREATE: Adiciona um novo investimento.
   // Omit<Product, 'id'> significa que o objeto recebido terá todos os campos de Product, EXCETO o 'id'.
   addProduct(productData: Omit<Product, 'id'>): void {
     const newProduct: Product = { ...productData, id: this.nextId++ };
     this.products.push(newProduct);
-    this.products$.next([...this.products]); // Emite a nova lista para quem estiver ouvindo.
+    this.products$.next([...this.products]); // Emite a nova lista
   }
 
-  // UPDATE: Atualiza um produto existente.
+  // UPDATE: Atualiza o investimento existente.
   updateProduct(updatedProduct: Product): void {
     const index = this.products.findIndex((p) => p.id === updatedProduct.id);
     if (index !== -1) {
@@ -64,7 +64,7 @@ export class ProductService {
     }
   }
 
-  // DELETE: Remove um produto pelo ID.
+  // DELETE: Remove o investimento pelo ID.
   deleteProduct(id: number): void {
     this.products = this.products.filter((p) => p.id !== id);
     this.products$.next([...this.products]);

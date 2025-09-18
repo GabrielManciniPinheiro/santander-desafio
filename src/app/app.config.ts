@@ -2,13 +2,9 @@
 
 import { ApplicationConfig, importProvidersFrom } from '@angular/core';
 import { provideRouter } from '@angular/router';
-
 import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
 import { provideAnimations } from '@angular/platform-browser/animations';
-
-// --- IMPORTAÇÕES DO ANGULAR MATERIAL E FORMS ---
-// Cada módulo corresponde a um conjunto de componentes visuais ou funcionalidades
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -23,8 +19,6 @@ export const appConfig: ApplicationConfig = {
     provideClientHydration(),
     provideAnimations(),
 
-    // --- ADICIONE OS MÓDULOS AQUI DENTRO ---
-    // A função importProvidersFrom permite que a gente use os módulos em uma aplicação standalone
     importProvidersFrom(
       MatTableModule,
       MatButtonModule,

@@ -6,15 +6,14 @@ import {
   FormGroup,
   Validators,
   ReactiveFormsModule,
-} from '@angular/forms'; // ReactiveFormsModule importado aqui
+} from '@angular/forms';
 import {
   MatDialogRef,
   MAT_DIALOG_DATA,
   MatDialogModule,
-} from '@angular/material/dialog'; // MatDialogModule importado aqui
+} from '@angular/material/dialog';
 import { Product } from '../../models/product.model';
 
-// --- NOVAS IMPORTAÇÕES NECESSÁRIAS ---
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';

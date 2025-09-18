@@ -4,9 +4,7 @@ import { Product } from '../../models/product.model';
 import { ProductService } from '../../services/product.service';
 import { ProductDialogComponent } from '../product-dialog/product-dialog.component';
 import { ConfirmationDialogComponent } from '../../shared/confirmation-dialog/confirmation-dialog.component';
-
-// --- NOVAS IMPORTAÇÕES NECESSÁRIAS ---
-import { CommonModule } from '@angular/common'; // Para o pipe 'currency' e outras diretivas
+import { CommonModule } from '@angular/common';
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -64,16 +62,16 @@ export class ProductListComponent implements OnInit {
   }
 
   deleteProduct(id: number): void {
-    // Abre o nosso novo diálogo de confirmação
+    // Abre o diálogo de confirmação
     const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
       data: { message: 'Tem certeza que deseja excluir este item?' }, // Passa a mensagem para o diálogo
     });
 
-    // Fica "escutando" o resultado do diálogo (true ou false)
+    // Escuta o resultado do diálogo (true ou false)
     dialogRef.afterClosed().subscribe((result) => {
-      // Se o resultado for 'true' (usuário clicou em Confirmar)
+      // Se o resultado for 'true'
       if (result) {
-        this.productService.deleteProduct(id); // Aí sim, chama o serviço para deletar
+        this.productService.deleteProduct(id); // chama o serviço para deletar
       }
     });
   }
