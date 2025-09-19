@@ -7,7 +7,7 @@ import { ProductListComponent } from './components/product-list/product-list.com
   selector: 'app-root',
   standalone: true,
   //  ADICIONA NO ARRAY 'IMPORTS' PARA O HTML O RECONHECER
-  imports: [CommonModule, RouterOutlet, ProductListComponent],
+  imports: [CommonModule, ProductListComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
