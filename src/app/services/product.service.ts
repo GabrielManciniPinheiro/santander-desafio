@@ -37,8 +37,6 @@ export class ProductService {
   // BehaviorSubject para os componentes ouvirem as mudanças na lista de investimentos.
   private products$ = new BehaviorSubject<Product[]>(this.products);
 
-  constructor() {}
-
   // --- MÉTODOS CRUD ---
 
   //Retorna a lista de produtos como um Observable.

@@ -6,14 +6,13 @@ import { MatButtonModule } from '@angular/material/button';
   selector: 'app-confirmation-dialog',
   standalone: true,
   imports: [
-    MatDialogModule, // Necessário para mat-dialog-title, content, actions
+    MatDialogModule, // Necessário para mat-dialog-title
     MatButtonModule, // Necessário para os botões
   ],
   templateUrl: './confirmation-dialog.component.html',
   styleUrl: './confirmation-dialog.component.scss',
 })
 export class ConfirmationDialogComponent {
-  // O construtor injeta os dados que foram passados ao abrir o diálogo.
-  // No nosso caso, vamos passar um objeto como: { message: 'Tem certeza...?' }
+  //  injeta os dados que foram passados ao abrir o diálogo.
   constructor(@Inject(MAT_DIALOG_DATA) public data: { message: string }) {}
 }
