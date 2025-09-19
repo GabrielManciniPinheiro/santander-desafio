@@ -13,21 +13,19 @@ import {
   MatDialogModule,
 } from '@angular/material/dialog';
 import { Product } from '../../models/product.model';
-
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-product-dialog',
-  standalone: true, // <-- ADICIONADO
+  standalone: true,
   imports: [
-    // <-- ADICIONADO
     MatDialogModule,
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
-    ReactiveFormsModule, // Essencial para [formGroup] e formControlName
+    ReactiveFormsModule, //  para formGroup e formControlName
   ],
   templateUrl: './product-dialog.component.html',
   styleUrl: './product-dialog.component.scss',

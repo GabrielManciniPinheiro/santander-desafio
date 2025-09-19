@@ -46,7 +46,7 @@ export class ProductService {
   }
 
   // CREATE: Adiciona um novo investimento.
-  // Omit<Product, 'id'> significa que o objeto recebido terá todos os campos de Product, EXCETO o 'id'.
+  // Omit<Product, 'id'> significa que o objeto recebido terá todos os campos de Product, menos o 'id'.
   addProduct(productData: Omit<Product, 'id'>): void {
     const newProduct: Product = { ...productData, id: this.nextId++ };
     this.products.push(newProduct);
@@ -57,7 +57,7 @@ export class ProductService {
   updateProduct(updatedProduct: Product): void {
     const index = this.products.findIndex((p) => p.id === updatedProduct.id);
     if (index !== -1) {
-      this.products[index] = updatedProduct;
+      this.products[index] = updatedProduct; //Substitui o antigo pelo novo
       this.products$.next([...this.products]);
     }
   }

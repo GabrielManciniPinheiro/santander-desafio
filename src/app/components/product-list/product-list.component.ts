@@ -11,9 +11,9 @@ import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-product-list',
-  standalone: true, // <-- ADICIONADO: Marca o componente como independente
+  standalone: true, // componente independente
   imports: [
-    // <-- ADICIONADO: Lista tudo que o TEMPLATE HTML usa
+    // Lista tudo que o TEMPLATE HTML usa
     CommonModule,
     MatTableModule,
     MatButtonModule,
